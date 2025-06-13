@@ -156,4 +156,4 @@ For detailed steps, refer to the [`cara-run.txt`](cara-run.txt) file (Bahasa Ind
 
 ---
 
-> 🌟 Built with logic, caffeine, and a bit of suffering.
+> 🌟 Built with logic, caffeine, ChatGPT, and a bit of suffering.
