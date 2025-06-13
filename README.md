@@ -2,6 +2,9 @@
 > Visualisasi solving Sudoku dengan algoritma Backtracking & Heuristik MRV (Terminal Version)
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python&logoColor=white)
+![Platform](https://img.shields.io/badge/Platform-CLI-informational?logo=windows-terminal&logoColor=white)
+![Made with](https://img.shields.io/badge/Made%20with-❤️%20and%20Backtracking-blue)
+
 
 Sudoku Solver berbasis terminal menggunakan algoritma **Backtracking** dan heuristik **MRV (Minimum Remaining Value)**.  
 Dilengkapi dengan animasi solving, logging hasil ke CSV, serta pemilihan tingkat kesulitan dan seed untuk reproducibility.
@@ -12,7 +15,7 @@ Dilengkapi dengan animasi solving, logging hasil ke CSV, serta pemilihan tingkat
 
 Proyek ini dibuat sebagai bagian dari tugas akhir  
 **Mata Kuliah Desain dan Analisis Algoritma – Semester 6**  
-Program Studi Teknik Informatika, Universitas Pasundan.
+Program Studi Ilmu Komputer, Universitas Djuanda.
 
 Tujuan proyek ini adalah mengimplementasikan dan memvisualisasikan algoritma **Backtracking**  
 dalam menyelesaikan masalah **Constraint Satisfaction Problem (CSP)**, yaitu Sudoku.
@@ -85,10 +88,9 @@ python main.py
 
 ## 📁 Struktur Proyek (Singkat)
 
-* `main.py` – Program utama CLI  
-* `sudoku/` – Modul solver & generator  
-* `log_sudoku.csv` – Catatan solving  
-* `cara-run.txt` – Panduan teknis (versi dosen-friendly)
+* `main2.py` – Program utama (semua logic ada di sini)  
+* `log_sudoku.csv` – Hasil pencatatan solving
+* `cara-run.txt` – Panduan teknis
 
 ---
 
@@ -122,7 +124,7 @@ Features include difficulty selection, animation of the solving process, and aut
 
 This project was developed as a final assignment  
 for the course **Design and Analysis of Algorithms – Semester 6**  
-at Informatics Engineering, Universitas Pasundan.
+at Computer Science, Universitas Djuanda.
 
 Its main purpose is to implement and visualize the **Backtracking algorithm**  
 for solving a **Constraint Satisfaction Problem (CSP)**: Sudoku.
@@ -154,4 +156,4 @@ For detailed steps, refer to the [`cara-run.txt`](cara-run.txt) file (Bahasa Ind
 
 ---
 
-> 🌟 Built with logic, caffeine, and a bit of suffering.
+> 🌟 Built with logic, caffeine, ChatGPT, and a bit of suffering.
