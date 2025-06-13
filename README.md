@@ -21,12 +21,12 @@ dalam menyelesaikan masalah **Constraint Satisfaction Problem (CSP)**, yaitu Sud
 
 ## 👥 Anggota Kelompok 5 (Backtracking Algorithm)
 
-1. **REVA YULIAN SATRIA** – I.2210497  
-2. **MUHAMAD ELGAR** – I.2210197  
-3. **MUHAMMAD ERLANGGA GUNAWAN** – I.2210161  
+1. **MUHAMMAD ERLANGGA GUNAWAN** – I.2210161  
+2. **REVA YULIAN SATRIA** – I.2210497  
+3. **MUHAMAD ELGAR** – I.2210197  
 4. **AGUNG RESTU RAMADHAN** – I.2210546  
 5. **ARDIANSYAH PUTRA PRATAMAA** – I.2210463  
-6. **ELITA NUR ILAHI** – I.2210060  
+6. **ELITA NUR ILAHI** – I.2210060
 
 ---
 
@@ -107,7 +107,7 @@ Silakan bintang ⭐ repo ini kalau merasa bermanfaat!
 
 ---
 
-> 🚀 Powered by Kelompok 5 | DAA Project 2025 – Universitas Pasundan
+> 🚀 Powered by Kelompok 5 | DAA Project 2025 – Universitas Djuanda
 
 ---
 
