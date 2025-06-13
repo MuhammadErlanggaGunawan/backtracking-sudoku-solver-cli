@@ -3,7 +3,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python&logoColor=white)
 ![Platform](https://img.shields.io/badge/Platform-CLI-informational?logo=windows-terminal&logoColor=white)
-![Made with](https://img.shields.io/badge/Made%20with-❤️%20and%20Backtracking-red)
+![Made with](https://img.shields.io/badge/Made%20with-❤️%20and%20Backtracking-blue)
 
 
 Sudoku Solver berbasis terminal menggunakan algoritma **Backtracking** dan heuristik **MRV (Minimum Remaining Value)**.  
