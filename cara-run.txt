@@ -1,0 +1,57 @@
+📌 CARA MENJALANKAN PROJECT SUDOKU SOLVER
+
+1. MASUK KE FOLDER PROJECT
+   ----------------------------------
+   Buka terminal (CMD, PowerShell, atau Terminal di Mac/Linux), lalu ketik:
+
+   cd path/ke/folder/project
+
+   Ganti 'path/ke/folder/project' dengan path asli folder tempat file Python-nya ada.
+
+2. AKTIFKAN VIRTUAL ENVIRONMENT
+   ----------------------------------
+
+   Kalau belum ada folder "venv", buat dulu dengan perintah:
+
+   python -m venv venv
+
+   🔸 Windows:
+       venv\Scripts\activate
+
+   🔹 Mac/Linux:
+       source venv/bin/activate
+
+   Setelah berhasil aktif, akan muncul (venv) di depan prompt terminal kamu.
+
+3. INSTALL SEMUA DEPENDENCIES
+   ----------------------------------
+   Pastikan file 'requirements.txt' sudah ada, lalu jalankan:
+
+   pip install -r requirements.txt
+
+4. JALANKAN PROGRAM
+   ----------------------------------
+   Ketik:
+
+   python main.py
+
+   Program akan mulai dan kamu bisa pilih level serta mode algoritma.
+
+5. KALAU MAU KELUAR
+   ----------------------------------
+   Di dalam program, biasanya ada opsi 'q' atau 'quit'. Untuk keluar dari virtual environment, ketik:
+
+   deactivate
+
+CATATAN:
+- Wajib pakai Python 3.8 atau lebih baru.
+- Kalau ada error "ModuleNotFoundError", ulangi langkah 2 dan 3.
+- Kalau kamu pakai VSCode, bisa klik kanan main.py lalu pilih "Run Python File in Terminal".
+
+Contoh isi 'requirements.txt':
+-------------------------------
+py-sudoku
+colorama
+
+Kalau kamu install package tambahan, tambahkan juga ke requirements.txt
+
