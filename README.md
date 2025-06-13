@@ -38,7 +38,7 @@ dalam menyelesaikan masalah **Constraint Satisfaction Problem (CSP)**, yaitu Sud
 Pastikan sudah install **Python 3.8+**, lalu jalankan dari terminal:
 
 ```bash
-python main.py
+python main2.py
 ```
 
 💡 Untuk panduan lengkap, baca file [`cara-run.txt`](cara-run.txt)
