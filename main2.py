@@ -133,15 +133,15 @@ def cari_sel_kosong_mrv(papan):
             # Cek hanya sel yang kosong (bernilai 0)
             if papan[baris][kolom] == 0:
                 # Hitung jumlah kemungkinan angka valid untuk sel ini
-                opsi = sum(1 for tebakan in range(1, 10) if apakah_valid(papan, tebakan, baris, kolom))
+                opsi = [tebakan for tebakan in range(1, 10) if apakah_valid(papan, tebakan, baris, kolom)]
 
                 # Update jika jumlah opsi lebih sedikit dari sebelumnya
-                if opsi < min_opsi:
-                    min_opsi = opsi
+                if len(opsi) < min_opsi:
+                    min_opsi = len(opsi)
                     kandidat = (baris, kolom)
 
                     # Jika cuma punya 1 opsi, langsung balikin (paling optimal)
-                    if opsi == 1:
+                    if min_opsi == 1:
                         return kandidat
                     
     # Return kandidat terbaik, atau (None, None) jika tidak ada sel kosong
@@ -282,17 +282,30 @@ def generate_valid_puzzle(tingkat, seed_input=None, max_attempts=100):
     '''
 
     for _ in range(max_attempts):  # Batas maksimal percobaan
-        seed = seed_input if seed_input is not None else random.randint(0, 99999)  # Tentukan seed random
-        puzzle = Sudoku(3, seed=seed).difficulty(tingkat)  # Generate puzzle pakai library sudoku
-        contoh_papan = [[num if num else 0 for num in row] for row in puzzle.board]  # Ubah jadi list biasa dengan 0 untuk sel kosong
+        try:
+            seed = seed_input if seed_input is not None else random.randint(0, 99999)  # Tentukan seed random
+            puzzle = Sudoku(3, seed=seed).difficulty(tingkat)  # Generate puzzle pakai library sudoku
+            
+            if contoh_papan is None: # Handle case ketika gagal generate puzzle
+                print(f"❌ Gagal generate puzzle setelah {max_attempts} percobaan. Seed: {seed}")
+                continue
 
-        # Validasi puzzle: hanya diterima jika masih mungkin unik dan jumlah solusi tepat 1
-        if apakah_satu_solusi(contoh_papan) and hitung_solusi(contoh_papan) == 1:
-            return contoh_papan, seed  # Puzzle valid dikembalikan
+            contoh_papan = [[num if num else 0 for num in row] for row in puzzle.board]  # Ubah jadi list biasa dengan 0 untuk sel kosong
+
+            # Validasi puzzle: hanya diterima jika masih mungkin unik dan jumlah solusi tepat 1
+            if not apakah_satu_solusi(contoh_papan):
+                continue
+
+            if hitung_solusi(contoh_papan) == 1:
+                return contoh_papan, seed  # Puzzle valid dikembalikan
+
+        except Exception as e:
+            print(f"Error saat generate puzzle: {str(e)}")
 
         if seed_input is not None:
             break  # jika seed input manual, kita gak mau ulang-ulang (hanya 1 percobaan)
-    
+
+    print(f"❌ Gagal menemukan puzzle valid setelah {max_attempts} percobaan")
     return None, None  # Gagal menghasilkan puzzle valid
 
 
@@ -366,7 +379,7 @@ def landing_page():
     print("║                                              ║")
     print("╚══════════════════════════════════════════════╝")
     print()
-    time.sleep(0.5)  # biar ga langsung lompat ke menu
+    time.sleep(0.2)  # biar ga langsung lompat ke menu
 
 
 def main():
