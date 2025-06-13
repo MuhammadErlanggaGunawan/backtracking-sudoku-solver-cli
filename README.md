@@ -149,7 +149,7 @@ for solving a **Constraint Satisfaction Problem (CSP)**: Sudoku.
 Make sure Python 3.8+ is installed, then run:
 
 ```bash
-python main.py
+python main2.py
 ```
 
 For detailed steps, refer to the [`cara-run.txt`](cara-run.txt) file (Bahasa Indonesia).
