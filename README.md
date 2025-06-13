@@ -58,12 +58,27 @@ python main.py
 ## 🧪 Contoh Output CLI
 
 ```
-🧬 Seed yang digunakan: (4258) dan memiliki 1 solusi.
+🔁 + 🧠 Mode: BT + MRV
+------------------------------
+5 7 3 | 8 6 9 | 1 2 4
+2 1 8 | 5 4 7 | 3 6 9
+4 6 9 | 1 2 3 | 5 8 7
+---------------------
+1 9 5 | 2 8 4 | 6 7 3
+7 2 6 | 3 1 5 | 4 9 8
+3 8 4 | 7 9 6 | 2 1 5
+---------------------
+8 3 1 | 4 7 2 | 9 5 6
+6 4 7 | 9 5 1 | 8 3 2
+9 5 2 | 6 3 8 | 7 4 1
+
+🧬 Seed yang digunakan: (28093) dan memiliki 1 solusi.
 
 ✅ Sudoku berhasil dipecahkan!
-🟠 Kesulitan Sudoku: Menengah
-🧩 Total langkah: 342
-⏱️ Waktu: 0.42 detik
+🔴 Kesulitan Sudoku: Sulit
+🧩 Total langkah: 71
+⏱️ Waktu: 5.29 detik
+🎞️ Animasi aktif: Ya
 ```
 
 ---
