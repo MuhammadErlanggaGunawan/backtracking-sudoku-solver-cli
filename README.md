@@ -124,7 +124,7 @@ Features include difficulty selection, animation of the solving process, and aut
 
 This project was developed as a final assignment  
 for the course **Design and Analysis of Algorithms – Semester 6**  
-at Informatics Engineering, Universitas Djuanda.
+at Computer Science, Universitas Djuanda.
 
 Its main purpose is to implement and visualize the **Backtracking algorithm**  
 for solving a **Constraint Satisfaction Problem (CSP)**: Sudoku.
