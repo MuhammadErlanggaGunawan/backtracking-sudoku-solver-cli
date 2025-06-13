@@ -286,7 +286,7 @@ def generate_valid_puzzle(tingkat, seed_input=None, max_attempts=100):
             seed = seed_input if seed_input is not None else random.randint(0, 99999)  # Tentukan seed random
             puzzle = Sudoku(3, seed=seed).difficulty(tingkat)  # Generate puzzle pakai library sudoku
             
-            if contoh_papan is None: # Handle case ketika gagal generate puzzle
+            if puzzle is None: # Handle case ketika gagal generate puzzle
                 print(f"❌ Gagal generate puzzle setelah {max_attempts} percobaan. Seed: {seed}")
                 continue
 
