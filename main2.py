@@ -151,30 +151,32 @@ def cari_sel_kosong_mrv(papan):
 def pecahkan_sudoku_anim(papan, delay=0.03, papan_awal=None, deskripsi_mode=None, mode='1'):
     '''
     Fungsi utama untuk menyelesaikan Sudoku dengan metode backtracking, 
-    sekaligus menampilkan animasi proses solving-nya di terminal (jika delay > 0).
+    sekaligus menampilkan animasi proses solving-nya di terminal.
     
     Parameter:
     - papan: papan sudoku 9x9 yang ingin dipecahkan.
-    - delay: waktu tunda antar langkah animasi (0.03 detik default).
-    - papan_awal: untuk referensi posisi awal yang sudah diisi.
+    - delay: waktu tunda antar langkah animasi (0 = tanpa animasi).
+    - papan_awal: referensi posisi angka asli (tidak bisa diubah).
     - deskripsi_mode: label yang menunjukkan mode solving (Naive / MRV).
-    - mode: '1' untuk naive (kiri atas), selain itu pakai MRV heuristik.
+    - mode: '1' untuk Backtracking Biasa, selain itu pakai MRV heuristik.
 
-    Fungsi mengembalikan:
-    - sukses: apakah puzzle berhasil diselesaikan
-    - langkah: jumlah langkah percobaan yang dilakukan
-    - durasi: waktu total yang dibutuhkan untuk menyelesaikan
+    Return:
+    - sukses: apakah puzzle berhasil dipecahkan
+    - langkah: jumlah langkah percobaan angka
+    - durasi: waktu total eksekusi solving
     '''
 
-    langkah = 0  # Hitung jumlah langkah percobaan
-    start = time.time()  # Waktu mulai
+    langkah = 0  # Untuk mencatat berapa banyak langkah/percobaan angka yang dilakukan
+    start = time.time()  # Mulai stopwatch
 
     def backtrack():
-        nonlocal langkah  # Biar langkah bisa diupdate dari fungsi dalam
+        nonlocal langkah  # Agar variabel langkah bisa dimodifikasi dari dalam fungsi ini
         if delay > 0:
-            animasi_cli(papan, None, 0, papan_awal, deskripsi_mode)  # Tampilkan papan pertama
+            animasi_cli(papan, None, 0, papan_awal, deskripsi_mode)  # Tampilkan papan awal
 
-        # Pilih metode pencarian sel kosong: naive atau MRV
+        # Pilih sel kosong berikutnya menggunakan:
+        # - strategi biasa (urutan kiri ke kanan, atas ke bawah)
+        # - atau heuristik MRV (pilih sel dengan kemungkinan angka paling sedikit)
         baris, kolom = cari_sel_kosong_biasa(papan) if mode == '1' else cari_sel_kosong_mrv(papan)
 
         # jika tidak ada sel kosong, artinya sudah selesai
@@ -187,26 +189,26 @@ def pecahkan_sudoku_anim(papan, delay=0.03, papan_awal=None, deskripsi_mode=None
             tampilkan_papan(papan, None, papan_awal)  # Tampilkan hasil akhir
             return True
 
-        # Coba angka 1–9 di posisi kosong yang dipilih
+        # Percobaan angka dari 1 sampai 9 untuk sel saat ini
         for tebakan in range(1, 10):
-            if apakah_valid(papan, tebakan, baris, kolom):  # Cek valid atau nggak
-                papan[baris][kolom] = tebakan  # Masukkan angka
-                langkah += 1  # Tambah langkah
+            if apakah_valid(papan, tebakan, baris, kolom):  # Cek apakah tebakan ini valid
+                papan[baris][kolom] = tebakan  # Isi sel dengan angka
+                langkah += 1  # Tambah hitungan langkah
 
                 if delay > 0:
                     print(f"Langkah {langkah}: Coba {tebakan} di ({baris}, {kolom})")
                     animasi_cli(papan, (baris, kolom), delay, papan_awal, deskripsi_mode)
 
-                if backtrack():  # Rekursi: lanjut ke sel berikutnya
-                    return True
+                if backtrack():  # Lanjut ke langkah berikutnya secara rekursif
+                    return True  # Jika solusi ditemukan, propagasi True ke atas
 
-                # Backtrack jika gagal
+                # Jika tebakan ini gagal, kembalikan sel ke 0 (backtrack)
                 papan[baris][kolom] = 0  # Reset sel
                 if delay > 0:
                     print(f"Langkah {langkah}: Backtrack dari ({baris}, {kolom})")
                     animasi_cli(papan, (baris, kolom), delay, papan_awal, deskripsi_mode)
 
-        return False  # jika semua angka gagal, berarti perlu backtrack ke level sebelumnya
+        return False  # Jika semua angka gagal, return False untuk trigger backtrack
 
     sukses = backtrack()  # Mulai solving
     durasi = time.time() - start  # Hitung durasi total
