@@ -22,14 +22,16 @@ dalam menyelesaikan masalah **Constraint Satisfaction Problem (CSP)**, yaitu Sud
 
 ---
 
-## 👥 Anggota Kelompok 5 (Backtracking Algorithm)
+## 👥 Anggota Kelompok 5
 
-1. **MUHAMMAD ERLANGGA GUNAWAN** – I.2210161  
-2. **REVA YULIAN SATRIA** – I.2210497  
-3. **MUHAMAD ELGAR** – I.2210197  
-4. **AGUNG RESTU RAMADHAN** – I.2210546  
-5. **ARDIANSYAH PUTRA PRATAMAA** – I.2210463  
-6. **ELITA NUR ILAHI** – I.2210060
+| Peran               | Nama Lengkap                 | NIM         |
+|---------------------|------------------------------|-------------|
+| 💻 Program           | Muhammad Erlangga Gunawan    | I.2210161   |
+|                     | Reva Yulian Satria           | I.2210497   |
+| 🗣️ Presentasi        | Muhamad Elgar                | I.2210197   |
+| 📄 Artikel/Jurnal    | Agung Restu Ramadhan         | I.2210546   |
+|                     | Ardiansyah Putra Pratamaa    | I.2210463   |
+|                     | Elita Nur Ilahi              | I.2210060   |
 
 ---
 
